@@ -41,6 +41,8 @@ alias ansible-playbook="docker run --rm \
  -v ${HOME}/Codes/gritus/keys:/home/ansible/.ssh/ --net=host \cytopia/ansible:2.6-tools ansible-playbook"
 alias composer="php /usr/local/bin/composer.phar"
 alias vim="nvim"
+alias ~="/home/tony"
+alias lvim="/home/tony/.local/bin/lvim"
 
 # Export PATH
 export PATH=$PATH:$HOME/scripts:$HOME/go/bin
@@ -58,3 +60,10 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# pnpm
+export PNPM_HOME="/home/tony/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
