@@ -6,15 +6,18 @@ sh <(curl -L https://nixos.org/nix/install)
 
 # Install packages
 nix-env -iA \
-    nixpkgs.antibody \
+  nixpkgs.antibody \
 	nixpkgs.git \
 	nixpkgs.neovim \
 	nixpkgs.tmux \
 	nixpkgs.stow \
 	nixpkgs.yarn \
-    nixpkgs.fzf \
-    nixpkgs.zsh \
-    nixpkgs.codespell
+  nixpkgs.fzf \
+  nixpkgs.zsh \
+  nixpkgs.codespell
+
+# create .config folder to prevent softlinked the entired .config to the dotfiles project
+mkdir ~/.config
 
 # stow dotfiles
 stow nvim
