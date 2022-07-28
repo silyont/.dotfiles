@@ -1,4 +1,4 @@
 nvim/.config/nvim/undodir
 nvim/.config/nvim/plugged
 
-lvim/.config/lvim/plugin
+lvim/.config/lvim/plugin/packer_compiled.lua
