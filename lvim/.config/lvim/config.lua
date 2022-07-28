@@ -18,8 +18,9 @@ lvim.colorscheme = "onedarker"
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.normal_mode["<leader>gg"] = ":LazyGit<CR>"
+lvim.keys.normal_mode["<C-j>"] = ":lua vim.lsp.buf.hover()<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -50,6 +51,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- }
 
 -- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["r"] = { "<cmd>SymbolsOutline<CR>", "Symbols" }
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["t"] = {
 --   name = "+Trouble",
