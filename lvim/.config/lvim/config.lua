@@ -28,7 +28,7 @@ lvim.keys.normal_mode["<leader>gg"] = ":LazyGit<CR>"
 vim.opt.wrap = true
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.foldermethod = "expr"
+vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
