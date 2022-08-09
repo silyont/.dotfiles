@@ -53,15 +53,15 @@ vim.opt.foldenable = false
 lvim.builtin.which_key.mappings['g']['g'] = { "<cmd>LazyGit<CR>", "LazyGit" }
 lvim.builtin.which_key.mappings["r"] = { "<cmd>SymbolsOutline<CR>", "Symbols" }
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
--- }
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Trouble",
+  r = { "<cmd>Trouble lsp_references<cr>", "References" },
+  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -136,9 +136,9 @@ formatters.setup {
     command = "prettier",
     --     ---@usage arguments to pass to the formatter
     --     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    --     extra_args = { "--print-with", "100" },
+    extra_args = { "--print-with", "100" },
     --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact" },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   },
 }
 
@@ -160,13 +160,29 @@ formatters.setup {
 --   },
 -- }
 
+-- Custom functions
+P = function(v)
+  print(vim.inspect(v))
+  return v
+end
+
+RELOAD = function(...)
+  return require('plenary.reload').reload_module(...)
+end
+
+R = function(name)
+  RELOAD(name)
+  return require(name)
+end
+
+
 -- Additional Plugins
 lvim.plugins = {
   --     {"folke/tokyonight.nvim"},
-  --     {
-  --       "folke/trouble.nvim",
-  --       cmd = "TroubleToggle",
-  --     },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
   {
     "phaazon/hop.nvim",
     event = "BufRead",
@@ -288,6 +304,13 @@ lvim.plugins = {
   },
   {
     "kdheepak/lazygit.nvim"
+  },
+  {
+    "pantharshit00/vim-prisma"
+  },
+  {
+    "nvim-treesitter/playground",
+    event = "BufRead",
   },
 }
 
