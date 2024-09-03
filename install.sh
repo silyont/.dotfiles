@@ -1,23 +1,11 @@
-# Install nix
-sh <(curl -L https://nixos.org/nix/install)
-
-# Source nix to current shell
-. ~/.nix-profile/etc/profile.d/nix.sh
-
-# Install packages
-nix-env -iA \
-  nixpkgs.antibody \
-	nixpkgs.git \
-	nixpkgs.neovim \
-	nixpkgs.tmux \
-	nixpkgs.stow \
-	nixpkgs.yarn \
-  nixpkgs.fzf \
-  nixpkgs.zsh \
-  nixpkgs.codespell
+# install devbox
+curl -fsSL https://get.jetify.com/devbox | bash
 
 # create .config folder to prevent softlinked the entired .config to the dotfiles project
 mkdir ~/.config
+
+# create .local folder to prevent softlinked the entired .local to the dotfiles project
+mkdir ~/.local
 
 # stow dotfiles
 stow nvim
@@ -34,8 +22,3 @@ command -v zsh | sudo tee -a /etc/shells
 # use zsh as default shell
 sudo chsh -s $(which zsh) $USER
 
-# bundle zsh plugins
-antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-
-# install neovim plugins
-nvim --headless +PlugInstall +qall
