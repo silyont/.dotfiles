@@ -10,16 +10,17 @@ config.use_fancy_tab_bar = false
 
 -- Window padding
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
 }
 
 -- Font
 config.font = wezterm.font_with_fallback({
-  { family = "Liga SFMono Nerd Font", weight = "Medium" },
-  { family = "Symbol Nerd Font" },
+	{ family = "Liga SFMono Nerd Font", weight = "Medium" },
+	{ family = "Noto Sans Symbols 2" },
+	{ family = "Symbol Nerd Font" },
 })
 config.font_size = 16
 
