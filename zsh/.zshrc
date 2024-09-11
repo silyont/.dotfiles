@@ -68,6 +68,7 @@ alias ll='lsd -l'
 alias vim='nvim'
 alias n='nvim'
 alias dc='docker compose'
+alias lg='lazygit'
 
 # Shell integrations
 source <(fzf --zsh)

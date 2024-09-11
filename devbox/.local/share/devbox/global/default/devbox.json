@@ -10,11 +10,12 @@
     "lsd@latest",
     "localsend@latest",
     "obsidian@latest",
-    "go@latest",
     "glow@latest",
     "just@latest",
     "postgresql@latest",
-    "lazygit@latest"
+    "lazygit@latest",
+    "go@latest",
+    "bun@latest"
   ],
   "shell": {
     "init_hook": [
