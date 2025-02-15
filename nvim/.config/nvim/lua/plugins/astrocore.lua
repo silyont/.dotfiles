@@ -65,6 +65,9 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        ["<M-j>"] = { "<cmd>cnext<CR>", desc = "Next quickfix" },
+        ["<M-k>"] = { "<cmd>cprev<CR>", desc = "Previous quickfix" },
+        ["<M-q>"] = { "<cmd>cclose<CR>", desc = "Close quickfix" },
       },
     },
   },

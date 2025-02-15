@@ -15,7 +15,11 @@
     "postgresql@latest",
     "lazygit@latest",
     "go@latest",
-    "bun@latest"
+    "bun@latest",
+    "mariadb-client@latest",
+    "qmk@latest",
+    "tmux@latest",
+    "k6@latest"
   ],
   "shell": {
     "init_hook": [

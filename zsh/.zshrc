@@ -22,7 +22,6 @@ zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZP::git
-zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::ssh-agent
 
@@ -32,7 +31,7 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # Keybindings
-bindkey -e
+bindkey -v
 
 # Oh my posh prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
@@ -74,3 +73,4 @@ alias lg='lazygit'
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 
+eval "$(just --completions zsh)"

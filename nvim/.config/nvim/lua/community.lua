@@ -9,6 +9,9 @@ return {
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.recipes.disable-tabline" },
-  { import = "astrocommunity/colorscheme/tokyonight-nvim" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.editing-support.copilotchat-nvim" },
+  { import = "astrocommunity.editing-support.nvim-treesitter-context" },
   -- import/override with your plugins folder
 }
