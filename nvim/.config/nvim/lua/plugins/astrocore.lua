@@ -31,6 +31,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        scrolloff = 12,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -68,6 +69,11 @@ return {
         ["<M-j>"] = { "<cmd>cnext<CR>", desc = "Next quickfix" },
         ["<M-k>"] = { "<cmd>cprev<CR>", desc = "Previous quickfix" },
         ["<M-q>"] = { "<cmd>cclose<CR>", desc = "Close quickfix" },
+
+        -- neotest
+        ["<leader>tg"] = { function() require("neotest").run.run() end, desc = "Run test" },
+        ["<leader>ta"] = { function() require("neotest").run.attach() end, desc = "Attach test" },
+        ["<leader>to"] = { function() require("neotest").output() end, desc = "Test output" },
       },
     },
   },

@@ -1,6 +1,13 @@
+# Add near the top of your .zshrc
+if [[ -n $TMUX ]]; then
+  export TERM="tmux-256color"
+else
+  export TERM="xterm-256color"
+fi
+
 # devbox -- some binary might depends on devbox as package manager
-eval "$(devbox global shellenv --init-hook)"
-if [ -e /home/tony/.nix-profile/etc/profile.d/nix.sh ]; then . /home/tony/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+eval "$(devbox global shellenv --recompute --init-hook)"
+if [ -e /home/$USER/.nix-profile/etc/profile.d/nix.sh ]; then . /home/$USER/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Set the directory to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -11,8 +18,13 @@ if [ ! -d "$ZINIT_HOME" ]; then
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+source <(fzf --zsh)
+
+eval "$(direnv hook zsh)"
+
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
+
 
 # Zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -22,11 +34,14 @@ zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 zinit snippet OMZP::git
+zinit snippet OMZP::git-extras
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::ssh-agent
+zinit snippet OMZP::colored-man-pages
+# zinit snippet OMZP::docker/completions/_docker
 
 # Load completions
-autoload -U compinit && compinit
+autoload -zU compinit && compinit
 
 zinit cdreplay -q
 
@@ -58,7 +73,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # ENV
 export GOPATH=$HOME/go 
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:$HOME/.fzf/bin
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default/share
 
 # Alias
@@ -69,8 +84,6 @@ alias n='nvim'
 alias dc='docker compose'
 alias lg='lazygit'
 
-# Shell integrations
-source <(fzf --zsh)
+# Terminal integrationh
 eval "$(zoxide init --cmd cd zsh)"
 
-eval "$(just --completions zsh)"
