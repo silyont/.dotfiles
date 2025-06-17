@@ -19,7 +19,14 @@
     "mariadb-client@latest",
     "qmk@latest",
     "tmux@latest",
-    "k6@latest"
+    "k6@latest",
+    "yazi@latest",
+    "direnv@latest",
+    "uv@latest",
+    "httpie@latest",
+    "gh@latest",
+    "neofetch@latest",
+    "sleek@latest"
   ],
   "shell": {
     "init_hook": [
