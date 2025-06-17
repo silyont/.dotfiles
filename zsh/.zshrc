@@ -25,6 +25,7 @@ eval "$(direnv hook zsh)"
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
+eval "$(direnv hook zsh)"
 
 # Zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -75,6 +76,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 export GOPATH=$HOME/go 
 export PATH=$PATH:$GOPATH/bin:$HOME/.fzf/bin
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default/share
+export EDITOR=nvim
 
 # Alias
 alias ls='lsd'
