@@ -16,6 +16,9 @@ config.window_padding = {
 	bottom = 0,
 }
 
+config.max_fps = 165
+config.animation_fps = 165
+
 -- Font
 config.font = wezterm.font_with_fallback({
 	{ family = "Liga SFMono Nerd Font", weight = "Medium" },
