@@ -85,7 +85,11 @@ alias vim='nvim'
 alias n='nvim'
 alias dc='docker compose'
 alias lg='lazygit'
+alias ve='vim --clean .env'
 
 # Terminal integrationh
 eval "$(zoxide init --cmd cd zsh)"
 
+
+# opencode
+export PATH=/home/tony/.opencode/bin:$PATH

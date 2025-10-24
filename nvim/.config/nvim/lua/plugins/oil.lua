@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   "stevearc/oil.nvim",
   opts = {
@@ -6,7 +7,7 @@ return {
       max_height = 60,
     },
   },
-  dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+  dependencies = { "echasnovski/mini.icons" }, -- use if prefer nvim-web-devicons
   keys = {
     {
       "<leader>O",
